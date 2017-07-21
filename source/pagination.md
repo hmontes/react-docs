@@ -125,7 +125,7 @@ const MoreCommentsQuery = gql`
   }
 `;
 
-const CommentsWithData = graphql(Comment, {
+const CommentsWithData = graphql(MoreCommentsQuery, {
   // This function re-runs every time `data` changes, including after `updateQuery`,
   // meaning our loadMoreEntries function will always have the right cursor
   props({ data: { loading, cursor, comments, fetchMore } }) {
